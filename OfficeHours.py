@@ -1,5 +1,10 @@
+#Note the peculiarities of importing datetime-- look at naive vs aware in future
 import datetime
 
+#Modulate hours
+hoursinday = 24
+
+#Timezone difference in hours compared to Portland home office 
 londondiff = 8
 newyorkdiff = 3
 
@@ -16,15 +21,14 @@ else:
 	print("Portland Office Open")
 	
 	
-if londontime <= 9 or londontime > 18:
+if londontime % hoursinday <= 9 or londontime % hoursinday > 18:
 	print("London Office Closed")
 else:
 	print("London Office Open")
 	
 		
-if newyorktime <= 9 or newyorktime > 18:
+if newyorktime % hoursinday <= 9 or newyorktime % hoursinday > 18:
 	print("New York Office Closed")
 else:
 	print("New York Office Open")
 
-#londontime and newyorktime % hoursinday
